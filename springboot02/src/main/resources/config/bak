@@ -1,0 +1,14 @@
+spring.datasource.type=com.zaxxer.hikari.HikariDataSource
+##最小空闲连接数量
+spring.datasource.hikari.minimum-idle=5
+##连接池最大连接数，默认是10 池中最大连接数，包括闲置和使用中的连接
+spring.datasource.hikari.maximum-pool-size=15
+spring.datasource.hikari.auto-commit=true
+##空闲连接存活最大时间，默认6000000（10分钟）
+spring.datasource.hikari.idle-timeout=30000
+##连接池名称
+spring.datasource.hikari.pool-name=22DatebookHikariCP
+##此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认18000000即30分钟
+spring.datasource.hikari.max-lifetime=18000000
+spring.datasource.hikari.connection-timeout=30000
+spring.datasource.hikari.connection-test-query=SELECT 1

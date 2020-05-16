@@ -1,0 +1,15 @@
+spring bean的作用域
+spring为bean提供了6种作用域，其中4种只有在web-aware的ApplicationContext中才有用。
+
+
+单例：singleton ->ws request session application-->生命周期绑定
+原型:protoType（每次new一个新的实例对象）、
+
+springmvc :controller,service,dao 层 都是单例的  pojo(实例bean是protoType多例的)
+spring scope singleton 单例 优点是提高性能，缺点会存在线程安全问题，尽量不要写在contoller层定义非静态    成员变量
+
+
+spring 循环引用(A->B B>C  C->A)，
+如果是单例模式则可以成功，如果都是多例或第一个不是single的则会失败
+
+懒加载：lazy-init  = true  当对象需要用到的时候再加载初始化

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <!-- 在url上使用@标签可以帮助我们自动加上contexPath-->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <div class="header">
+        <div style="width:1000px;margin:0 auto;">
+            <div style="width: 100%;height: 87px;">
+                <div style="width: 87px;height: 87px;float: left;"><img th:src="@{/images/zshLogo.png}"/></div>
+                <span style="display: block;float: left;height: 87px;line-height: 87px;font-size: 26px;margin-left: 10px;">
+
+ 				[[${config.systemName}]]	 数据应用分析平台
+
+
+ 					</span>
+            </div>
+        </div>
+    </div>
+<hr>
+<form action="/account/register" method="post">
+    <div class="form-group">
+        <label for="loginName">loginName</label>
+        <input type="text" name="loginName" class="form-control" id="loginName" placeholder="请输入登录名">
+    </div>
+    <div class="form-group">
+        <label for="password">password</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="请输入密码">
+    </div>
+    <div class="form-group">
+        <label for="nickName">nickName</label>
+        <input type="text" name="nickName" class="form-control" id="nickName" placeholder="请输入昵称">
+    </div>
+    <div class="form-group">
+        <label for="age">age</label>
+        <input type="text" name="age" class="form-control" id="age" placeholder="请输入年龄">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+</body>
+
+</html>

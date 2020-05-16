@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>学生信息</title>
+    <style type="text/css">
+        table {
+            border: 1px solid black;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        table thead th {
+            border: 1px solid black;
+        }
+
+        table tbody td {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+<table cellpadding="0" cellspacing="0">
+    <thead>
+    <th>序号</th>
+    <th>用户id</th>
+    <th>用户姓名</th>
+    <th>用户地址</th>
+    <th>用户电话</th>
+    <th>用户性别</th>
+    </thead>
+    <tbody>
+    <tr th:each="entries,stat:${users}" th:style="'background-color:'+@{${stat.odd}?'#F2F2F2'}">
+        <td th:text="${stat.count}"></td>
+        <td th:text="${entries['userId']}"></td>
+        <td th:text="${entries['userName']}"></td>
+        <td th:text="${entries['address']}"></td>
+        <td th:text="${entries['telPhone']}"></td>
+        <td th:text="${entries['sex']}"></td>
+        <!-- 写法一：
+        <td th:text="${entries['scourse']['cname']}"></td>
+        <td th:text="${entries['scourse']['cscore']}"></td>-->
+        <!-- 写法二：
+        <td th:text="*{entries['scourse']['cname']}"></td>
+        <td th:text="*{entries['scourse']['cscore']}"></td>-->
+        <!-- 写法三：-->
+        <!-- <td th:object="${entries['scourse']}">
+             <span th:text="*{['cname']}"></span>
+         </td>
+         <td th:object="${entries['scourse']}">
+             <span th:text="*{['cscore']}"></span>
+         </td>-->
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

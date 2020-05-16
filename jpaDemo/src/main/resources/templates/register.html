@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <!-- 在url上使用@标签可以帮助我们自动加上contexPath-->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<p th:text="${result == null ?'' : result.message}" class="bg-danger">...</p>
+<hr>
+<a th:href="@{/list}">用户列表</a>
+<a th:href="@{/user/register}">用户注册</a>
+<form action="register" method="post">
+    <div class="form-group">
+        <label for="loginName">loginName</label>
+        <input type="text" name="userName" class="form-control" id="loginName" placeholder="请输入登录名">
+    </div>
+    <div class="form-group">
+        <label for="password">password</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="请输入密码">
+    </div>
+    <div class="form-group">
+        <label for="address">address</label>
+        <input type="text" name="address" class="form-control" id="address" placeholder="请输入地址">
+    </div>
+    <div class="form-group">
+        <label for="telPhone">telPhone</label>
+        <input type="text" name="telPhone" class="form-control" id="telPhone" placeholder="请输入电话号码">
+    </div>
+    <!--
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>-->
+    <div class="checkbox">
+        <label>
+            <input type="checkbox"> Check me out
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</body>
+</html>

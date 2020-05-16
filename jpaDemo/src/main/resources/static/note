@@ -1,0 +1,5 @@
+1.Spring Data JPA CRUD
+
+前后端分离：
+1.后端提供json，前端渲染（浏览器）
+2.服务器端渲染->jsp,thymeleaf

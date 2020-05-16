@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /springboot
+  port: 80
+spring:
+  thymeleaf:
+    cache: false # 关闭页面缓存
+    encoding: UTF-8 # 模板编码
+    prefix: classpath:/templates/  # 页面映射路径
+    suffix: .html # 试图后的后缀
+    mode: HTML # 模板模式
+  #数据库连接：注意要加上时区
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#配置mapper.xml文件存放路径
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml

@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /test
+  port: 8080
+spring:
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  check-config-location: true
+  mapper-locations: classpath:/mapper/*.xml
+  #自动补全mapper.xml文件实体类包名称的
+  type-aliases-package: com.edward.springbootmybatis.dao.entity

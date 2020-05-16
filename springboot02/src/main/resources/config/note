@@ -1,0 +1,29 @@
+在Spring Boot中多环境配置文件名必须满足：
+application-{profile}.properties的固定格式，
+其中{profile}对应你的环境标识
+例如：
+
+application-dev.properties：开发环境
+
+application-test.properties：测试环境
+
+application-prod.properties：生产环境
+
+application.properyies通过spring.profiles.active来具体激活一个或者多个配置文件，
+如果没有指定任何profile的配置文件的话，spring boot默认会启动application-default.properties。
+
+
+##yml文件的优点：天然的树状结构，一目了然，实质上跟properties是差不多的，
+
+##如果同时存在优先支持properties； application.yml 文件中的配置无效。
+
+
+profile的配置文件可以按照application.properyies的放置位置一样，放于以下四个位置，
+
+1.当前目录的 “/config”的子目录下
+
+2.当前目录下
+
+3.classpath根目录的“/config”包下
+
+4.classpath的根目录下

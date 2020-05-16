@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.dao.AccountDao">
+    <resultMap id="AccountMap" type="com.example.demo.entity.Account">
+        <result column="id" property="id"/>
+        <result column="login_name" property="loginName"/>
+        <result column="password" property="password"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="age" property="age"/>
+        <result column="location" property="location"/>
+        <result column="role" property="role"/>
+    </resultMap>
+
+    <select id="getAccountByNameAndPwd" resultMap="AccountMap">
+        select * from account
+        where login_name = #{loginName} and password = #{password}
+
+    </select>
+
+    <select id="getAccountList" resultMap="AccountMap">
+        select * from account
+    </select>
+
+    <!--<insert id="insertAccount">
+        insert into account (login_name,password,nick_name,age,location,role)
+        values(#{loginName},#{password},#{nickName},#{age},#{location},#{role})
+    </insert>-->
+
+    <select id="getAccountListByName" resultMap="AccountMap">
+        select * from account where login_name LIKE CONCAT('%',#{accountName},'%')
+    </select>
+
+</mapper>
