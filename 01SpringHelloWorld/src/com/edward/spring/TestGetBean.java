@@ -1,7 +1,5 @@
 package com.edward.spring;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestGetBean {
@@ -20,6 +18,5 @@ public class TestGetBean {
 
         Person person = (Person) ctx.getBean("person");
         System.out.println(person.toString());
-        System.out.println(ToStringBuilder.reflectionToString(person, ToStringStyle.JSON_STYLE));
     }
 }
